@@ -14,7 +14,7 @@ RUN apt-get install -qqy --no-install-recommends\
 
 # Environment variables (i.e. needed to trigger JCasC at the end)
 ENV CASC_JENKINS_CONFIG="/var/jenkins_home/jcasc/jenkins.yml"
-ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false -Dhudson.model.UsageStatistics.disabled=true"
+ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
 
 # Install Jenkins plugins
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt

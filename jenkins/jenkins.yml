@@ -13,7 +13,6 @@ jenkins:
       users:
         - id: "admin"
           password: "password"
-      users:
         - id: "user"
           password: "password"
   authorizationStrategy:

@@ -31,3 +31,7 @@ DevInc generates a best-practices ready stack to test CI/CD platforms.
    
 4. Run: <code>docker-compose up -d</code>
 5. Enjoy testing your new DevOps tools against DevInc! `:)`
+
+
+#### Disclaimer
+Despite focusing on the DevOps best practices, _DevInc_ is not intended for using in production systems. Use at your own risk!

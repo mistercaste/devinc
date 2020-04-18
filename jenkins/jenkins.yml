@@ -2,7 +2,9 @@ jenkins:
   systemMessage: "Jenkins configured automatically by Jenkins Configuration as Code"
   numExecutors: 2
   disableRememberMe: true
-  crumbIssuer: standard
+  crumbIssuer: "standard"
+  remotingSecurity:
+    enabled: true
   globalNodeProperties:
     - envVars:
         env:
@@ -36,7 +38,7 @@ credentials:
               description: "Credentials to GitHub"
               id: "credentials-github"
               password: ${GITHUB_PASSWORD}
-              scope: GLOBAL
+              scope: "GLOBAL"
               username: ${GITHUB_USERNAME}
 tool:
   git:

@@ -1,0 +1,62 @@
+jenkins:
+  systemMessage: "Jenkins configured automatically by Jenkins Configuration as Code"
+  numExecutors: 2
+  disableRememberMe: true
+  globalNodeProperties:
+    - envVars:
+        env:
+          - key: "GITHUB_TOKEN"
+            value: ${GITHUB_TOKEN_READONLY}
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: "admin"
+          password: "password"
+      users:
+        - id: "user"
+          password: "password"
+  authorizationStrategy:
+    globalMatrix:
+      permissions:
+        - "Overall/Read:user"
+        - "Overall/Administer:admin"
+security:
+  apiToken:
+    usageStatisticsEnabled: false
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
+          - usernamePassword:
+              description: "Credentials to GitHub"
+              id: "credentials-github"
+              password: ${GITHUB_PASSWORD}
+              scope: GLOBAL
+              username: ${GITHUB_USERNAME}
+tool:
+  git:
+    installations:
+      - name: "Default"
+        home: "git"
+  jdk:
+    installations:
+      - name: "open-jdk8"
+        properties:
+          - installSource:
+              installers:
+                - adoptOpenJdkInstaller:
+                    id: "jdk8u232-b09"
+  maven:
+    installations:
+      - name: "maven-3"
+        properties:
+          - installSource:
+              installers:
+                - maven:
+                    id: "3.5.4"
+jobs:
+  - script: >
+      folder('infra') {
+          displayName('INFRA')
+      }

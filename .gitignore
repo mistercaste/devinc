@@ -1,0 +1,5 @@
+**/.env
+*.iml
+.idea
+.env
+jenkins.jks

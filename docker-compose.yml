@@ -1,0 +1,24 @@
+version: "3.7"
+
+services:
+
+  jenkins-master:
+    restart: on-failure
+    build:
+      context: ./jenkins
+      dockerfile: Dockerfile
+    environment:
+      JENKINS_OPTS: --httpPort=-1 --httpsPort=8080 --httpsKeyStore=/var/lib/jenkins/ssl/jenkins.jks --httpsKeyStorePassword=${PASSWORD_HTTPS_CERTIFICATE}
+      GITHUB_USERNAME: "${GITHUB_USERNAME}"
+      GITHUB_PASSWORD: "${GITHUB_PASSWORD}"
+      GITHUB_TOKEN_READONLY: "${GITHUB_TOKEN_READONLY}"
+    ports:
+        - 443:8080
+    volumes:
+    - jenkins_home:/var/jenkins_home
+    - /etc/localtime:/etc/localtime
+    - ./jenkins.jks:/var/lib/jenkins/ssl/jenkins.jks:ro
+    - ./jenkins/jenkins.yml:/var/jenkins_home/jcasc/jenkins.yml
+volumes:
+  jenkins_home:
+    driver: local

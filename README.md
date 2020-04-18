@@ -10,9 +10,7 @@ A Development Incubator for test and sample purposes.
 DevInc generates a best-practices ready stack to test CI/CD platforms.
 
 
-#### Kickstart
-Below you can find the steps to kickoff the platform command-line:
-
+## Kickstart
 1. Generate a _Java Key Store_
 
 > TIP - you can generate a self-signed one (password is the value of `HTTPS_CERTIFICATE_PASSWORD`):

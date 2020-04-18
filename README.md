@@ -9,6 +9,10 @@ A Development Incubator for test and sample purposes.
 
 DevInc generates a best-practices ready stack to test CI/CD platforms.
 
+## Requirements
+
+* [docker 19.00](https://docs.docker.com/get-docker)
+* [docker-compose 1.25](https://docs.docker.com/compose/install)
 
 ## Kickstart
 1. Clone *DevInc*

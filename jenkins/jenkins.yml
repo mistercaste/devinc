@@ -18,7 +18,7 @@ jenkins:
   authorizationStrategy:
     globalMatrix:
       permissions:
-        - "Overall/Read:user"
+        - "Overall/Read:authenticated"
         - "Overall/Administer:admin"
 security:
   apiToken:

@@ -2,6 +2,7 @@ jenkins:
   systemMessage: "Jenkins configured automatically by Jenkins Configuration as Code"
   numExecutors: 2
   disableRememberMe: true
+  crumbIssuer: standard
   globalNodeProperties:
     - envVars:
         env:

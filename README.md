@@ -11,14 +11,15 @@ DevInc generates a best-practices ready stack to test CI/CD platforms.
 
 
 ## Kickstart
-1. Generate a _Java Key Store_
+1. Clone *DevInc*
+2. Put a _Java Key Store_ <code>jenkins.jks</code> in the main folder
 
-> TIP - you can generate a self-signed one (password is the value of `HTTPS_CERTIFICATE_PASSWORD`):
+> TIP - you can generate a self-signed one (the password is the value for `HTTPS_CERTIFICATE_PASSWORD`):
 ````
     keytool -genkey -keyalg RSA -alias tomcat -keystore selfsigned.jks -validity <days> -keysize 2048
 ````
 
-2. Create a `.env` file containing the passwords.
+3. Create a `.env` file containing your passwords in the main folder
 
 > Sample content of file .env
 ````    
@@ -28,7 +29,5 @@ DevInc generates a best-practices ready stack to test CI/CD platforms.
     GITHUB_TOKEN_READONLY=********
 ````
    
-3. Copy the <code>jenkins.jks</code> _Java Key Store_ in the folder of docker-compose
 4. Run: <code>docker-compose up -d</code>
-5. Wait for Jenkins to be available at <code>https://\<HOST-IP\>:433</code>
-6. Enjoy testing your new DevOps tools against DevInc! `:)`
+5. Enjoy testing your new DevOps tools against DevInc! `:)`

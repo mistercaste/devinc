@@ -1,4 +1,5 @@
-FROM jenkins/jenkins:lts
+# Use Jenkins LTS
+FROM jenkins/jenkins:2.222.1
 
 # Perform installations as root user
 USER root

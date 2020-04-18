@@ -23,6 +23,10 @@ jenkins:
 security:
   apiToken:
     usageStatisticsEnabled: false
+  queueItemAuthenticator:
+    authenticators:
+      - global:
+          strategy: "triggeringUsersAuthorizationStrategy"
 credentials:
   system:
     domainCredentials:
